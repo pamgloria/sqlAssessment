@@ -1,0 +1,35 @@
+STEP 2:
+  
+  SELECT email_domain
+  AS 'top 25 school'
+  FROM users
+  LIMIT 25;
+
+  SELECT city,
+  COUNT(*)
+  AS 'learners in new york'
+  FROM users
+  WHERE city = 'New York';
+
+  SELECT mobile_app,
+  COUNT(*)
+  AS 'mobile users'
+  FROM users
+  WHERE mobile_app = 'mobile-user';
+
+
+STEP 3:
+
+  
+
+
+
+
+  SELECT sign_up_at,
+    COUNT(*),
+    strfttime('%H', sign_up_at)
+  FROM users
+    AND sign_up_at
+  GROUP BY 3
+  ORDER BY 3
+  LIMIT 20;
