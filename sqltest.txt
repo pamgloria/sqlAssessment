@@ -20,16 +20,16 @@ STEP 2:
 
 STEP 3:
 
-  
-
-
-
-
   SELECT sign_up_at,
-    COUNT(*),
-    strfttime('%H', sign_up_at)
+   strftime('%S', sign_up_at)
   FROM users
-    AND sign_up_at
-  GROUP BY 3
-  ORDER BY 3
+  GROUP BY 1
   LIMIT 20;
+
+
+STEP 4:
+
+  SELECT *
+  FROM users
+  JOIN progress
+    ON users.user_id = progress.user_id;
